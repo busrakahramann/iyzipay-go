@@ -6,7 +6,7 @@ type CreatePaymentRequest struct {
 	Price           string       `json:"price,omitempty"`
 	PaidPrice       string       `json:"paidPrice,omitempty"`
 	BasketId        string       `json:"basketId,omitempty"`
-	Installment     int          `json:"installment,omitempty"`
+	Installment     string       `json:"installment,omitempty"`
 	PaymentGroup    string       `json:"paymentGroup,omitempty"`
 	PaymentCard     PaymentCard  `json:"paymentCard,omitempty"`
 	Buyer           Buyer        `json:"buyer,omitempty"`
