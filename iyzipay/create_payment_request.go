@@ -6,6 +6,7 @@ type CreatePaymentRequest struct {
 	Price           string       `json:"price,omitempty"`
 	PaidPrice       string       `json:"paidPrice,omitempty"`
 	BasketId        string       `json:"basketId,omitempty"`
+	Installment     int          `json:"installment,omitempty"`
 	PaymentGroup    string       `json:"paymentGroup,omitempty"`
 	PaymentCard     PaymentCard  `json:"paymentCard,omitempty"`
 	Buyer           Buyer        `json:"buyer,omitempty"`
@@ -28,6 +29,7 @@ func (request CreatePaymentRequest) toPkiString() string {
 	pkiBuilder.appendPrice("price", request.Price)
 	pkiBuilder.appendPrice("paidPrice", request.PaidPrice)
 	pkiBuilder.append("basketId", request.BasketId)
+	pkiBuilder.append("installment", request.Installment)
 	pkiBuilder.append("paymentGroup", request.PaymentGroup)
 	pkiBuilder.append("paymentCard", request.PaymentCard.toPkiString())
 	pkiBuilder.append("buyer", request.Buyer.toPkiString())
